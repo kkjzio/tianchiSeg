@@ -325,6 +325,11 @@ for epoch in range(1, EPOCHES+1):
     # 早停
     early_stopping(vloss, model,initia=False)
     
+
+    if early_stopping.early_stop:
+        print("Early stopping")
+        break
+
     #第一次早停时更换loss
     # if early_stopping.early_stop:
     #     if stt==0 :
